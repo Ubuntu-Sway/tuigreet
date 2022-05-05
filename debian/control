@@ -1,0 +1,18 @@
+Source: tuigreet
+Section: x11
+Priority: optional
+Maintainer: Aleksey Samoilov <samoilov.lex@gmail.com>
+Build-Depends: debhelper-compat (= 13),
+               cargo:native,
+               git,
+               pkg-config,
+               rustc:native,
+               scdoc
+Standards-Version: 4.5.1
+Homepage: https://github.com/apognu/tuigreet
+Rules-Requires-Root: no
+
+Package: greetd-tuigreet
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, greetd
+Description: a console UI greeter for greetd

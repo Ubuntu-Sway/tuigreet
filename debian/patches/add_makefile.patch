@@ -1,0 +1,51 @@
+--- a/dev/null	2022-04-27 16:01:02.985505151 +0400
++++ b/Makefile	2022-04-27 16:18:15.949346949 +0400
+@@ -0,0 +1,48 @@
++export prefix ?= /usr
++bindir = $(prefix)/bin
++
++PACKAGE=greetd-tuigreet
++BIN=tuigreet
++
++DEBUG ?= 0
++TARGET = debug
++ifeq ($(DEBUG),0)
++	ARGS += "--release"
++	TARGET = release
++endif
++
++VENDORED ?= 0
++ifeq ($(VENDORED),1)
++	ARGS += "--frozen" "--offline"
++endif
++
++BINARY=target/$(TARGET)/$(BIN)
++
++.PHONY: all clean distclean install uninstall update vendor
++
++all: $(BINARY)
++
++clean:
++	cargo clean
++	
++distclean:
++	rm -rf .cargo vendor vendor.tar target
++	
++vendor:
++	mkdir -p .cargo
++	cargo vendor | head -n -1 > .cargo/config
++	echo 'directory = "vendor"' >> .cargo/config
++	tar pcf vendor.tar vendor
++	rm -rf vendor
++	
++extract-vendor:
++ifeq ($(VENDORED),1)
++	rm -rf vendor; tar pxf vendor.tar
++endif
++
++install:
++	install -Dm04755 "$(BINARY)" "$(DESTDIR)$(bindir)/$(BIN)"
++	install -Dm644 "debian/tuigreet.conf" "${DESTDIR}/usr/lib/tmpfiles.d/tuigreet.conf"
++
++$(BINARY): extract-vendor
++	cargo build $(ARGS) --locked

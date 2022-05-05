@@ -1,0 +1,53 @@
+tuigreet (0.7.2-2~jammy) jammy; urgency=medium
+
+  * Rebuild
+
+ -- Aleksey Samoilov <samoilov.lex@gmail.com>  Thu, 28 Apr 2022 20:42:57 +0400
+
+tuigreet (0.7.2-2) jammy; urgency=medium
+
+  * Initial upload
+
+ -- Aleksey Samoilov <samoilov.lex@gmail.com>  Wed, 27 Apr 2022 22:52:22 +0400
+
+tuigreet (0.7.2-1) jammy; urgency=low
+
+  * Initial upload
+
+ -- Aleksey Samoilov <samoilov.lex@gmail.com>  Wed, 27 Apr 2022 15:58:01 +0400
+
+greetd (0.8.0.1-2) jammy; urgency=medium
+
+  * Add libpam0g-dev
+
+ -- Aleksey Samoilov <samoilov.lex@gmail.com>  Wed, 27 Apr 2022 15:19:35 +0400
+
+greetd (0.8.0.1-1) jammy; urgency=medium
+
+  * Fix
+
+ -- Aleksey Samoilov <samoilov.lex@gmail.com>  Wed, 27 Apr 2022 14:54:48 +0400
+
+greetd (0.8.0-4) jammy; urgency=medium
+
+  * Fix build
+
+ -- Aleksey Samoilov <samoilov.lex@gmail.com>  Wed, 27 Apr 2022 14:47:09 +0400
+
+greetd (0.8.0-3) jammy; urgency=medium
+
+  * Add makefile
+
+ -- Aleksey Samoilov <samoilov.lex@gmail.com>  Wed, 27 Apr 2022 14:35:08 +0400
+
+greetd (0.8.0-2) jammy; urgency=medium
+
+  * Initial upload
+
+ -- Aleksey Samoilov <samoilov.lex@gmail.com>  Wed, 27 Apr 2022 14:28:33 +0400
+
+greetd (0.8.0-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Aleksey Samoilov <samoilov.lex@gmail.com>  Thu, 21 Apr 2022 00:43:51 +0400
